@@ -1,4 +1,4 @@
-![](https://github.com/jose-masa-cabrera/chat-python-p2p/blob/main/images/p2p_python.png)
+![](https://github.com/jose-masa-cabrera/Design-and-deployment-of-virtual-network-scenarios-in-Kathara-for-laboratory-practices/blob/main/images/images_tfg.png)
 # KATHARA
 
 _Design and deployment of virtual network scenarios in Kathara for laboratory practices_
