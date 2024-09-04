@@ -8,10 +8,12 @@ Scenario deployment using:
 * Python v3
 * Docker-compose
 * Configuration files
+  
 Server configuration:
 * Web
 * DNS
 * TFTP
+  
 Routing protocols:
 * RIP
 * Static routing
