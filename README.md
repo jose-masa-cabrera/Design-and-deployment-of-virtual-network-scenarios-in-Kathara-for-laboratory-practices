@@ -33,7 +33,7 @@ _Scenario3: Docker-compose_
 docker-compose -f archivo.yml up -d
 ```
 
-_Scenario4: Server configuration
+_Scenario4: Server configuration_
 ```
 kathara lstart
 ```
