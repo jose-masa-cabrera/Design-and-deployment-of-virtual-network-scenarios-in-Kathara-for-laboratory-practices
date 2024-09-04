@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Habilitar IP forwarding en el router
+sysctl -w net.ipv4.ip_forward=1
+
+# Configurar las interfaces del router
+ip address add 10.0.5.253/24 dev eth0
+ip address add 10.0.6.254/24 dev eth1
+ip address add 10.0.7.254/24 dev eth2
+ip address add 10.0.8.254/24 dev eth3
+
+# Configurar los servidores DNS en /etc/resolv.conf
+cat <<EOT > /etc/resolv.conf
+nameserver 8.8.8.8
+EOT
+

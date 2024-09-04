@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# r1.startup
+
+# Configurar la MAC address de la interfaz eth0 (opcional)
+ip link set dev eth0 address 00:00:00:00:01:01
+
+# Asignar una IP a la interfaz eth0
+ip address add 10.0.2.254/24 dev eth0
+ip address add 10.0.1.254/24 dev eth1
+
+

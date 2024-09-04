@@ -1,0 +1,21 @@
+#!/bin/bash
+
+#server_web.startup
+
+ip link set dev eth0 address 00:00:00:00:01:01
+ip address add 10.0.0.1/24 dev eth0
+ip route add default via 10.0.0.254
+
+
+#pagina web 
+echo "<html><body><h1>Servidor Web en Kathará</h1></body></html>" > /var/www/html/index.html
+
+# Iniciar el servicio Apache
+service apache2 start
+
+# Configurar los servidores DNS en /etc/resolv.conf
+cat <<EOT > /etc/resolv.conf
+nameserver 8.8.8.8
+EOT
+
+

@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# pc1.startup
+
+# Configurar la MAC address de la interfaz eth0
+#ip link set dev eth0 address 00:00:00:00:01:02
+
+# Obtener la dirección IP a través de DHCP
+dhclient eth0
+
+# Actualizar la lista de paquetes e instalar Apache
+#apt-get update
+#apt-get install -y apache2
+
+# Crear una página web simple
+#echo "<html><body><h1>Servidor Web en Kathará</h1></body></html>" > /var/www/html/index.html
+
+# Iniciar el servicio Apache
+#service apache2 start
+

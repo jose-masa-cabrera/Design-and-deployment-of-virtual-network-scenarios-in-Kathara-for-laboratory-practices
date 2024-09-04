@@ -1,0 +1,18 @@
+#!/bin/bash
+# Configurar interfaces
+#route2
+ip addr add 10.1.0.62/27 dev eth0
+ip link set eth0 up
+
+#create eth1
+ip link add link eth0 name eth1 type macvlan mode bridge
+ip addr add 10.1.0.126/27 dev eth1
+ip link set eth1 up
+
+
+
+#rutas 
+ip route add 10.1.0.0/27 via 10.1.0.33 dev eth0 #A
+ip route add 10.1.0.64/27 via 10.1.0.33 dev eth0 #B
+ip route add 10.1.0.128/27 via 10.1.0.33 dev eth0 #C
+

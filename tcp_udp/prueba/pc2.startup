@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# pc2.startup
+
+# Configurar la MAC address de la interfaz eth0
+ip link set dev eth0 address 00:00:00:00:01:03
+
+# Asignar una IP estática a la interfaz eth0
+ip address add 10.0.2.1/24 dev eth0
+
+# Actualizar la lista de paquetes e instalar el servidor DHCP
+apt-get update
+apt-get install -y isc-dhcp-server
+
+# Configurar el archivo dhcpd.conf
+cat <<EOT > /etc/dhcp/dhcpd.conf
+default-lease-time 600;
+max-lease-time 7200;
+subnet 10.0.1.0 netmask 255.255.255.0 {
+    range 10.0.1.50 10.0.1.100;
+    option routers 10.0.1.1;
+    option subnet-mask 255.255.255.0;
+    option domain-name-servers 8.8.8.8, 8.8.4.4;
+    option domain-name "kathara.local";
+}
+EOT
+
+# Configurar la interfaz en la que correrá el servidor DHCP
+echo 'INTERFACES="eth0"' > /etc/default/isc-dhcp-server
+
+# Iniciar el servicio DHCP
+service isc-dhcp-server start
+

@@ -1,0 +1,55 @@
+version: "2.4"
+services:
+  # PC1
+  pc1:
+    image: kathara/base
+    container_name: pc1
+    privileged: true
+    command: tail -f /dev/null
+    volumes:
+      - /home/andresmasa/Documents/TFG/vlsm/shared:/shared
+
+  # PC2
+  pc2:
+    image: kathara/base
+    container_name: pc2
+    privileged: true
+    command: tail -f /dev/null
+    volumes:
+      - /home/andresmasa/Documents/TFG/vlsm/shared:/shared
+
+  # PC3
+  pc3:
+    image: kathara/base
+    container_name: pc3
+    privileged: true
+    command: tail -f /dev/null
+    volumes:
+      - /home/andresmasa/Documents/TFG/vlsm/shared:/shared
+
+  # Router R1
+  r1:
+    image: kathara/base
+    container_name: r1
+    privileged: true
+    command: tail -f /dev/null
+    volumes:
+      - /home/andresmasa/Documents/TFG/vlsm/shared:/shared
+
+  # Router R2
+  r2:
+    image: kathara/base
+    container_name: r2
+    privileged: true
+    command: tail -f /dev/null
+    volumes:
+      - /home/andresmasa/Documents/TFG/vlsm/shared:/shared
+
+  # Router R3
+  r3:
+    image: kathara/base
+    container_name: r3
+    privileged: true
+    command: tail -f /dev/null
+    volumes:
+      - /home/andresmasa/Documents/TFG/vlsm/shared:/shared

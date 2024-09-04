@@ -1,0 +1,8 @@
+#!/bin/bash
+# Configurar interfaces
+
+#pc3
+ip addr add 10.1.0.97/28 dev eth0
+ip link set eth0 up
+ip route add default via 10.1.0.110 dev eth0
+
